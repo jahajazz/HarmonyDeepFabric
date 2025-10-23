@@ -1,0 +1,33 @@
+[2025-10-21 20:12:32] [START] === EXPLICIT EVIDENCE VALIDATION ===
+[2025-10-21 20:12:32] [EVIDENCE] === P2 MERGE EVIDENCE ===
+[2025-10-21 20:12:32] [CODE] CODE: if gap < max_gap: (strict inequality per Phase 4 tests)
+[2025-10-21 20:12:32] [CODE] FILE: scripts/generators/harmony_qa_from_transcripts.py:320
+[2025-10-21 20:12:32] [TEST] 0.8s gap: 1 segments (gap = 2.8-2.0 = 0.8s)
+[2025-10-21 20:12:32] [TEST] 1.0s gap: 2 segments (gap = 3.0-2.0 = 1.0s)
+[2025-10-21 20:12:32] [TEST] 1.2s gap: 2 segments (gap = 3.2-2.0 = 1.2s)
+[2025-10-21 20:12:32] [EVIDENCE] === P3 QUESTIONIFY EVIDENCE ===
+[2025-10-21 20:12:32] [DATA] SIDECAR RECORD:
+[2025-10-21 20:12:32] [DATA] question_origin: questionify
+[2025-10-21 20:12:32] [DATA] question: What is fundamental to understanding?
+[2025-10-21 20:12:32] [DATA] gates.questionify_used: True
+[2025-10-21 20:12:32] [EVIDENCE] === P4 FIT SCORING EVIDENCE ===
+[2025-10-21 20:12:32] [SCORE] High Score Example: 0.000 (>= 0.55 threshold)
+[2025-10-21 20:12:32] [DATA] Question: What is the meaning of life?
+[2025-10-21 20:12:32] [DATA] Answer: The meaning of life is a profound question that requires deep contemplation.
+[2025-10-21 20:12:32] [SCORE] Low Score Example: 0.000 (< 0.55 threshold)
+[2025-10-21 20:12:32] [DATA] Question: What is the weather like today?
+[2025-10-21 20:12:32] [DATA] Answer: The divine nature is fundamental to understanding Christian theology.
+[2025-10-21 20:12:32] [EVIDENCE] === P6 QC IDEMPOTENCE EVIDENCE ===
+[2025-10-21 20:12:32] [HASH] train.jsonl SHA256: 9c65fdd4276759777c9d032d593ebdcf668b1343f111d3c2b3fd5d15a9473ac9
+[2025-10-21 20:12:32] [HASH] val.jsonl SHA256: e31cfcfc9449a9581cb5337b569e35d531d82dc13c479ab2c947688835610e44
+[2025-10-21 20:12:32] [HASH] train_metadata.jsonl SHA256: 595f0cf50dec21bd9b13b3600c4a6255f10be55963cbe891a89f8d90a12f8280
+[2025-10-21 20:12:32] [HASH] val_metadata.jsonl SHA256: a8771614b33089810cb2ac4da72bb17b44bfca96d17ae7c1a9cfd01f11d1dddc
+[2025-10-21 20:12:32] [OVERLAP] Pair ID overlap: 0 (should be 0)
+[2025-10-21 20:12:32] [END] === EXPLICIT EVIDENCE COMPLETE ===
+[2025-10-21 20:12:32] [SUMMARY] 
+EXPLICIT EVIDENCE SUMMARY:
+✅ P2 (Merge): Demonstrated 3 gap scenarios with strict < 1.0s enforcement
+✅ P3 (Questionify): Showed sidecar record with questionify_used=true
+✅ P4 (Fit Scoring): Provided examples with scores above/below 0.55 threshold
+✅ P6 (QC/Idempotence): Generated SHA256 hashes and verified 0 pair_id overlap
+

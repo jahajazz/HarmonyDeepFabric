@@ -1,0 +1,26 @@
+# Minimal Dockerfile for Harmony Dataset Converter
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements and install dependencies
+COPY container-requirements.txt .
+RUN pip install --no-cache-dir -r container-requirements.txt
+
+# Copy the converter script and entrypoint
+COPY convert_to_harmony.py .
+COPY docker-entrypoint.sh .
+
+# Make entrypoint executable
+RUN chmod +x docker-entrypoint.sh
+
+# Create data directory for mounting
+RUN mkdir -p /data/input /data/output /data/transcripts
+
+# Set default command to run the entrypoint script
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
+
+# Add health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD python -c "print('Container is healthy')" || exit 1

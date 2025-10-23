@@ -1,0 +1,23 @@
+{
+  "sample_size": 1,
+  "pass_rate": 0.0,
+  "threshold": 0.95,
+  "failures": [
+    {
+      "index": 6,
+      "episode_id": "",
+      "window_id": null,
+      "answer_speaker": "",
+      "timestamp": "?:??",
+      "issues": [
+        "unsupported",
+        "not_a_question",
+        "too_long_answer",
+        "speaker_not_allowed",
+        "duplicate_like",
+        "other"
+      ],
+      "comment": "All fields are empty, indicating multiple issues with the record's completeness and validity."
+    }
+  ]
+}

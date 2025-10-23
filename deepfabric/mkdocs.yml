@@ -1,0 +1,137 @@
+site_name: DeepFabric Documentation
+site_description: Synthetic Dataset Generation for Language Models
+site_url: https://deepfabric.readthedocs.io
+repo_url: https://github.com/lukehinds/deepfabric
+repo_name: lukehinds/deepfabric
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/index.md
+    - Installation: getting-started/installation.md
+    - First Dataset: getting-started/first-dataset.md
+  - Configuration Guide:
+    - Overview: guide/index.md
+    - Configuration: guide/configuration.md
+    - Topic Trees: guide/topic-trees.md
+    - Topic Graphs: guide/topic-graphs.md
+    - Dataset Generation: guide/dataset-generation.md
+    - System Prompts: guide/system-prompts.md
+    - Provider Integration: guide/provider-integration.md
+    - Instruction Formats:
+      - Chain of Thought:
+        - Overview: guide/instruction-formats/chain-of-thought/index.md
+        - Formats:
+          - Free-text CoT: guide/instruction-formats/chain-of-thought/formats/free-text.md
+          - Structured CoT: guide/instruction-formats/chain-of-thought/formats/structured.md
+          - Hybrid CoT: guide/instruction-formats/chain-of-thought/formats/hybrid.md
+        - Configuration:
+          - YAML Config: guide/instruction-formats/chain-of-thought/configuration/yaml-config.md
+          - Python API: guide/instruction-formats/chain-of-thought/configuration/python-api.md
+        - Tutorials:
+          - Math Reasoning: guide/instruction-formats/chain-of-thought/tutorials/math-reasoning.md
+        - Advanced:
+          - Reasoning Styles: guide/instruction-formats/chain-of-thought/advanced/reasoning-styles.md
+        - Reference:
+          - Schemas: guide/instruction-formats/chain-of-thought/reference/schemas.md
+          - Troubleshooting: guide/instruction-formats/chain-of-thought/reference/troubleshooting.md
+      - Agent Tool-Calling:
+        - Overview: guide/instruction-formats/agent-tool-calling/index.md
+        - Single-Turn: guide/instruction-formats/agent-tool-calling/single-turn.md
+        - Multi-Turn: guide/instruction-formats/agent-tool-calling/multi-turn.md
+        - Configuration:
+          - YAML Config: guide/instruction-formats/agent-tool-calling/configuration/yaml-config.md
+          - Python API: guide/instruction-formats/agent-tool-calling/configuration/python-api.md
+        - Tutorials:
+          - Getting Started: guide/instruction-formats/agent-tool-calling/tutorials/getting-started.md
+    - Tool Configuration: guide/yaml-tool-configuration.md
+  - SDK Guide:
+    - Generator Pattern: guide/generator-pattern.md
+  - Formatters:
+    - Overview: formatters/overview.md
+    - Built-in Reference: formatters/built-in-reference.md
+    - Custom Formatter Guide: formatters/custom-formatter-guide.md
+    - API Reference: formatters/api-reference.md
+  - CLI Reference:
+    - Overview: cli/index.md
+    - generate: cli/generate.md
+    - validate: cli/validate.md
+    - visualize: cli/visualize.md
+    - upload: cli/upload.md
+    - format: cli/format.md
+  - API Reference:
+    - Overview: api/index.md
+    - Tree: api/tree.md
+    - Graph: api/graph.md
+    - DataSetGenerator: api/generator.md
+    - Configuration: api/config.md
+  - Examples:
+    - Overview: examples/index.md
+    - Basic Usage: examples/basic-usage.md
+    - Advanced Workflows: examples/advanced-workflows.md
+    - Hugging Face Integration: examples/huggingface-integration.md
+    - Agent Tool-Calling: examples/agent-tool-calling.md
+
+theme:
+  name: material
+  font:
+    text: Nunito
+    code: Fira Code
+  palette:
+    - scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.share
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+    - content.tabs.link
+    - content.code.select
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lukehinds/deepfabric
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/deepfabric/

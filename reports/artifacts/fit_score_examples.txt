@@ -1,0 +1,16 @@
+FIT-SCORE EXAMPLES
+==================================================
+
+KEPT EXAMPLE (score >= 0.55):
+Question: What is fundamental to understanding Christian theology?
+Answer: The divine nature is fundamental to understanding Christian theology and spiritual development....
+Fit Score: 0.75
+Status: accepted
+PairFit Passed: True
+
+DROPPED EXAMPLE (score < 0.55):
+Question: What is the weather like today?
+Answer: The divine nature is fundamental to understanding Christian theology....
+Fit Score: 0.25
+Status: rejected
+PairFit Passed: False

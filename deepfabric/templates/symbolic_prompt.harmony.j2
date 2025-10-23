@@ -1,0 +1,15 @@
+- role: system  
+  content: {{ system_prompt }}
+
+- role: user  
+  content: |  
+    Analyze the following text and produce a symbolic narrative summary.  
+    
+    Text: {{ transcript_chunk }}
+
+- role: assistant  
+  content:  
+    analysis: |  
+      {{ reasoning }}
+    final: |  
+      {{ symbolic_summary }}

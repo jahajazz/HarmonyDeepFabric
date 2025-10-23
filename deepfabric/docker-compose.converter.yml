@@ -1,0 +1,24 @@
+# Docker Compose for Harmony Dataset Converter
+version: '3.8'
+
+services:
+  harmony-converter:
+    build:
+      context: .
+      dockerfile: Dockerfile.converter
+    container_name: harmony-converter
+    volumes:
+      # Mount local data directory to container /data
+      - ./data:/data
+    environment:
+      # Optional: specify primary speaker for analysis focus
+      - PRIMARY_SPEAKER=${PRIMARY_SPEAKER:-}
+      # Optional: keep container running after conversion
+      - KEEP_RUNNING=${KEEP_RUNNING:-false}
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "python", "-c", "print('Container is healthy')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

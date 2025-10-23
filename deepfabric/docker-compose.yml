@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  deepfabric:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data/transcripts:/data/transcripts
+      - ./data/output:/data/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Uncomment and set your API keys if needed
+    # environment:
+    #   - OPENAI_API_KEY=your_openai_key
+    #   - ANTHROPIC_API_KEY=your_anthropic_key
+    #   - GOOGLE_API_KEY=your_google_key
+    #   - HUGGINGFACEHUB_API_TOKEN=your_hf_token
+    #   - KAGGLE_USERNAME=your_kaggle_username
+    #   - KAGGLE_KEY=your_kaggle_key
+    #   - POSTHOG_KEY=your_posthog_key
+    #   - POSTHOG_HOST=your_posthog_host
+    #   - POSTHOG_PROJECT_ID=your_posthog_project_id
+    #   - POSTHOG_ENABLED=false
+    #   - POSTHOG_DEBUG=false
+    #   - POSTHOG_ENV=development
+    #   - POSTHOG_SEND_FEATURE_FLAGS=true
+    #   - POSTHOG_DISABLED=false
+    #   - POSTHOG_DISABLE_GEOIP_CAPTURE=true
+    #   - POSTHOG_DISABLE_SESSION_RECORDING=true
+    #   - POSTHOG_SESSION_RECORDING_OPT_IN=true
+    #   - POSTHOG_SESSION_RECORDING_CAPTURE_PAGEVIEWS=true
+    #   - POSTHOG_SESSION_RECORDING_RECORD_CANVAS=true
+    #   - POSTHOG_SESSION_RECORDING_RECORD_CROSS_ORIGIN_IFRAMES=true
+    #   - POSTHOG_SESSION_RECORDING_RECORD_CROSS_ORIGIN_IFRAMES_VERBOSE=true
+    #   - POSTHOG_SESSION_RECORDING_RECORD_CROSS_ORIGIN_IFRAMES_DOMAIN=*

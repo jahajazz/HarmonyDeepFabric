@@ -1,0 +1,50 @@
+{
+  "created_at": "validate_harmony_qc.py",
+  "file_hashes": {
+    "train.jsonl": "a2f5a08319057ee582dce797d241f27b26186ac410e92256f610108ce56e6390",
+    "val.jsonl": "28d111cd2870a78b74d207f96b8d7481bd73e691f4fbcd3e8f988b9d697c9a6b",
+    "sidecar_train.jsonl": "008230030b2402dbcd175ca7fc840d5458eb2d9ec1889c3f6a2373114afbe437",
+    "sidecar_val.jsonl": "ec3fa0e68d9266769411947229f00c922bba1bbeda0337f738064662740b36f2",
+    "train_metadata.jsonl": "008230030b2402dbcd175ca7fc840d5458eb2d9ec1889c3f6a2373114afbe437",
+    "val_metadata.jsonl": "ec3fa0e68d9266769411947229f00c922bba1bbeda0337f738064662740b36f2"
+  },
+  "record_counts": {
+    "train.jsonl": 19,
+    "val.jsonl": 2,
+    "sidecar_train.jsonl": 19,
+    "sidecar_val.jsonl": 2,
+    "train_metadata.jsonl": 19,
+    "val_metadata.jsonl": 2
+  },
+  "split_info": {},
+  "train": {
+    "path": "data\\harmony_ready\\train.jsonl",
+    "count": 19,
+    "sha256": "a2f5a08319057ee582dce797d241f27b26186ac410e92256f610108ce56e6390"
+  },
+  "val": {
+    "path": "data\\harmony_ready\\val.jsonl",
+    "count": 2,
+    "sha256": "28d111cd2870a78b74d207f96b8d7481bd73e691f4fbcd3e8f988b9d697c9a6b"
+  },
+  "sidecar_train": {
+    "path": "data\\harmony_ready\\sidecar_train.jsonl",
+    "count": 19,
+    "sha256": "008230030b2402dbcd175ca7fc840d5458eb2d9ec1889c3f6a2373114afbe437"
+  },
+  "sidecar_val": {
+    "path": "data\\harmony_ready\\sidecar_val.jsonl",
+    "count": 2,
+    "sha256": "ec3fa0e68d9266769411947229f00c922bba1bbeda0337f738064662740b36f2"
+  },
+  "train_metadata": {
+    "path": "data\\harmony_ready\\train_metadata.jsonl",
+    "count": 19,
+    "sha256": "008230030b2402dbcd175ca7fc840d5458eb2d9ec1889c3f6a2373114afbe437"
+  },
+  "val_metadata": {
+    "path": "data\\harmony_ready\\val_metadata.jsonl",
+    "count": 2,
+    "sha256": "ec3fa0e68d9266769411947229f00c922bba1bbeda0337f738064662740b36f2"
+  }
+}

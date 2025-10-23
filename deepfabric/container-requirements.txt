@@ -1,0 +1,2 @@
+# Minimal requirements for Harmony converter container
+# Only includes essential dependencies for the conversion script

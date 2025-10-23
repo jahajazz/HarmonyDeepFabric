@@ -1,0 +1,62 @@
+# Symbolic Dataset Generation Configuration
+model: "gpt-4o-mini"  # Use GPT-4o-mini for structured outputs support
+
+data:
+  input_dir: "/data/transcripts"  # Directory containing input text chunks
+  output_file: "/data/output/symbolic_harmony.jsonl"  # Output file path
+  chunk_size: 1000  # Target chunk size in tokens
+  overlap: 200  # Overlap between chunks in tokens
+
+output_format:
+  type: "harmony"
+  channels: ["analysis", "final"]
+
+# Narrative analysis configuration
+analysis:
+  # Depth of analysis (can be combined)
+  depth:
+    symbolic: true  # Basic symbolic interpretation
+    archetypal: true  # Archetypal patterns and motifs
+    psychological: false  # Psychological analysis
+    theological: true  # Theological interpretation
+  
+  # Language and tone settings
+  style:
+    tone: "theological"  # Options: theological, philosophical, literary, analytical
+    formality: "scholarly"  # Options: casual, neutral, scholarly, poetic
+    perspective: "third_person"  # Options: first_person, second_person, third_person
+  
+  # Post-processing options
+  post_processing:
+    enabled: true  # Enable post-processing to merge outputs
+    merge_strategy: "hierarchical"  # Options: sequential, hierarchical, thematic
+    min_similarity: 0.7  # Similarity threshold for merging (0.0-1.0)
+    max_merge_group: 5  # Maximum number of chunks to merge
+
+# System prompt template with placeholders
+system_prompt: |
+  You are a {style.tone} analyst with expertise in {#each analysis.depth as depth, enabled}{#if enabled}{depth}{#sep}, {/sep}{/if}{/each} interpretation.
+  Analyze the provided text from a {style.tone} perspective, focusing on:
+  {#if analysis.depth.symbolic}- Symbolic meanings and metaphors{/if}
+  {#if analysis.depth.archetypal}- Archetypal patterns and motifs{/if}
+  {#if analysis.depth.psychological}- Psychological dimensions and character motivations{/if}
+  {#if analysis.depth.theological}- Theological and spiritual implications{/if}
+  
+  Write in a {style.formality} {style.tone} style using the {style.perspective} perspective.
+  Provide a nuanced analysis that reveals deeper layers of meaning.
+
+generation:
+  temperature: 0.7  # Controls randomness (0.0-1.0)
+  max_tokens: 1024  # Maximum tokens to generate
+  top_p: 0.9  # Nucleus sampling parameter
+  frequency_penalty: 0.2  # Penalize frequent tokens
+  presence_penalty: 0.1  # Penalize new tokens
+  max_retries: 3  # Number of retry attempts on failure
+  request_timeout: 60  # Timeout in seconds
+
+# Post-generation processing
+post_generation:
+  merge_analysis: true  # Merge multiple analyses into a unified narrative
+  summary_length: "medium"  # Options: short, medium, long
+  include_sources: true  # Include references to original chunks
+  format: "narrative"  # Options: narrative, bullet_points, structured

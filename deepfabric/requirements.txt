@@ -1,0 +1,15 @@
+huggingface-hub==0.35.3
+datasets==4.1.1
+kagglehub>=0.3.0
+outlines==1.2.5
+openai>=1.107.2
+anthropic>=0.67.0
+sentence-transformers>=2.2.0
+PyYAML>=6.0.1
+click>=8.1.7
+pydantic>=2.0.0
+mermaid-py>=0.8.0
+rich>=13.0.0
+google-genai>=1.36.0
+posthog>=3.0.0
+mkdocstrings-python>=1.18.2
